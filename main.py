@@ -1,45 +1,33 @@
+
 import discord
 import requests
-import json
+from replit import db
 
 
 
 
-TOKEN = "ODM1MjYwNzIyMTUyOTk2OTA2.YIM3Kg.8usVftwAVwVjqXSmkt1mEqg2bFs"
+# getting crypto data
+def getCryptoPrices(crypto):
+  URL ='https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd'
+  r = requests.get(url=URL)
+  data = r.json()
 
+  # putting the cryptocurrencies and their prices in db
+  for i in range(len(data)):
+    db[data[i]['id']] = data[i]['current_price']
+
+  if crypto in db.keys():
+    return db[crypto]
+  else:
+    return None
+
+
+
+
+
+# instantiate a discord client
 client = discord.Client()
 
-
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('>info cg'):
-        await message.channel.send('https://www.coingecko.com/')
-    if message.content.startswith('>info cmc'):
-        await message.channel.send('https://coinmarketcap.com/')
-    if message.content.startswith('>info coin'):
-        await message.channel.send('Type the abbreviation of the coin')
-        if message.content.startswith('eth'):
-            browser = webdriver.Chrome()
-            browser.get('https://www.coingecko.com/en/coins/ethereum')
-            price = browser.find_element_by_id('price')
-            price.text
-#You will get the price of RM 89.39
-#store it into a data frame
-#import numpy as np
-#import pandas as pd
-#df = pd.DataFrame([["Product A", price.text]], columns=["Product","Price"])
-            print(price)
-
-
-             
-       
-
-
-       
 @client.event
 async def on_ready():
     print('Logged in as')
@@ -47,27 +35,35 @@ async def on_ready():
     #print(client.user.id)
     print('------')
 
-client.run(TOKEN)
+# called whether there is a message in the chat
+@client.event
+async def on_message(message):
+  if message.author == client.user:
+    return
+
+  if message.content.startswith('Hi'):
+    await message.channel.send('Hi Jay')
+
+  # send crypto price directly 
+  if message.content.lower() in db.keys():
+    await message.channel.send(f'The current price of {message.content} is: {getCryptoPrices(message.content.lower())} USD')
+
+  # list all the available coins
+  if message.content.startswith('$list'):
+    cryptoSupportedList = [key for key in db.keys()]
+    await message.channel.send(cryptoSupportedList)
 
 
-from selenium import webdriver
+
+  # setting mutliple price alerts
+  if message.content.startswith('$set '):
+    messageList = message.content.split(' ')
+    cryptoConcerned = messageList[1]
+
+    priceTargets = []
+    for i in range(len(messageList) - 2):
+      priceTargets.append(int(messageList[2 + i]))
 
 
-browser = webdriver.Chrome()
-browser.get('https://www.coingecko.com/en/coins/ethereum')
-price = browser.find_element_by_id('price')
-price.text
-#You will get the price of RM 89.39
-#store it into a data frame
-#import numpy as np
-#import pandas as pd
-#df = pd.DataFrame([["Product A", price.text]], columns=["Product","Price"])
-print(price)
-
-
-#Repeat the step for Product Page 2
-#browser.get('https://<Competitor-Website>/ProductPage2')
-#price = browser.find_element_by_id('price')
-#Put in the product B price into the table
-#df2 = pd.DataFrame([["Product B", price.text]], columns=["Product","Price"])
-#df.append(df2)
+BOT_TOKEN = 'ODM1MjYwNzIyMTUyOTk2OTA2.YIM3Kg.8usVftwAVwVjqXSmkt1mEqg2bFs'
+client.run(BOT_TOKEN)
