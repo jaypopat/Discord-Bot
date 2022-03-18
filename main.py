@@ -1,4 +1,3 @@
-
 import discord
 import requests
 from replit import db
@@ -65,5 +64,5 @@ async def on_message(message):
       priceTargets.append(int(messageList[2 + i]))
 
 
-BOT_TOKEN = 'ODM1MjYwNzIyMTUyOTk2OTA2.YIM3Kg.8usVftwAVwVjqXSmkt1mEqg2bFs'
+BOT_TOKEN = 'XXXXXX'
 client.run(BOT_TOKEN)
