@@ -42,8 +42,8 @@ async def on_message(message):
     await message.channel.send('https://coinmarketcap.com/')
 
   if message.content.lower() in db.keys():
-    await message.channel.send(f'The current price of {message.content} is: {getCryptoPrices(message.content.lower())} USD')
-    await message.channel.send(f'How many units of {message.content} do you hold?')
+    await message.channel.send(f'The current price of {message.content} is {getCryptoPrices(message.content.lower())} USD')
+  
   
 BOT_TOKEN = 'XXXXXXXXXXXXXXXX'
 client.run(BOT_TOKEN)
