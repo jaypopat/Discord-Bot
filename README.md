@@ -57,9 +57,6 @@ The bot uses the CoinGecko API to get the prices of the coins. The API returns p
 This bot is a simple tool that allows users to create and manage their own crypto portfolio in a Discord server. It's a great way to keep track of your crypto investments and stay updated with the latest prices.
 
 
-
-
-<<<<<<< HEAD
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 
@@ -101,9 +98,3 @@ The bot is case-sensitive for the crypto-currency names
 The bot does not validate if the coins entered by the user are valid or not.
 Conclusion
 This bot is a simple tool that allows users to create and manage their own crypto portfolio in a Discord server. It's a great way to keep track of your crypto investments and stay updated with the latest prices.
-
-
-
-
-=======
->>>>>>> 5566009f238334a07f13cf3fc20f8da30ad02aa2
