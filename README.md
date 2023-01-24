@@ -1,13 +1,34 @@
+# Discord Crypto Bot
+This is a simple Discord bot that uses the Discord API and Python's "requests" library to retrieve and display cryptocurrency prices from the CoinGecko API.
 
-# Crypto Portfolio Discord Bot
+The bot also includes commands to display links to popular cryptocurrency exchanges such as Binance and Bitmart, as well as links to CoinGecko and CoinMarketCap.
 
+The script requires a Discord bot token, which should be added to the BOT_TOKEN variable before running the script.
 
-This is a simple Discord bot that allows users to create and manage their own crypto portfolio.
+The bot utilizes the "on_message" event to listen for commands and the "on_ready" event to print the bot's name and ID to the console upon successful login.
 
-Features
+To run the bot, you will need to have python3 and the following libraries installed:
 
+discord
+requests
+To run the script, use the command:
 
+python3 bot.py
+You can also use repl.it to run the script without installing any library.
 
+The bot supports the following commands:
+
+- !binance : Send link of Binance
+- !bitmart : Send link of Bitmart
+- !cg : Send link of Coingecko
+- !cmc : Send link of Coinmarketcap
+
+The bot also supports the following commands for crypto prices:
+
+- crypto name: Send current price of specific crypto in USD.
+- Please note that the script utilizes a dictionary, "db", to store the current prices of each cryptocurrency. The prices are only updated when the script is run.
+
+## An updated version of this is in the making which includes the features:
 # Features
 - Users can create their own portfolio by adding coins and their respective amounts
 - Users can view their portfolio by typing the command !portfolio
@@ -16,85 +37,4 @@ Features
 - Users can get the current price of any coin by typing the command !price [coin name]
 - Users can get the links to popular crypto exchange websites like Binance, Bitmart, CoinGecko, CoinMarketCap by typing the command !binance, !bitmart, !cg, !cmc respectively
 
-# Getting started
-To use this bot, you will need to have a Discord account and create a bot on the Discord Developer Portal. Once you have your bot's token, you can invite the bot to your server and begin using it.
-
-You will also need to have Python and the discord.py library installed on your machine.
-
-
-
-
-## Usage
-Once the bot is added to your server, users can create their own portfolio by typing the command !add [coin name] [amount]. For example, !add BTC 2.5 will add 2.5 BTC to the user's portfolio.
-
-Users can view their portfolio by typing the command !portfolio. This will display a list of all the coins in the user's portfolio and their respective amounts.
-
-Users can see the current value of their portfolio in USD by typing the command !networth. This will display the total value of the user's portfolio in USD, calculated using the current prices of the coins.
-
-Users can add/remove coins from their portfolio by using the command !add [coin name] [amount] and !remove [coin name] [amount] respectively.
-
-Users can get the current price of any coin by typing the command !price [coin name]. For example, !price BTC will display the current price of Bitcoin in USD.
-
-Users can get the links to popular crypto exchange websites like Binance, Bitmart, CoinGecko, CoinMarketCap by typing the command !binance, !bitmart, !cg, !cmc respectively.
-
-
-
-## Note
-The bot uses the CoinGecko API to get the prices of the coins. The API returns prices in USD, if you wish to use other currencies, you'll have to change the code accordingly.
-
-
-
-
-
-
-# Additional Information
-- The code uses the discord.py library to interact with the Discord API
-- The bot is not persistent and will not save the user's portfolio after the bot is closed.
-- The bot is case-sensitive for the crypto-currency names
-- The bot does not validate if the coins entered by the user are valid or not.
-
-# Conclusion
-This bot is a simple tool that allows users to create and manage their own crypto portfolio in a Discord server. It's a great way to keep track of your crypto investments and stay updated with the latest prices.
-
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-
-Crypto Portfolio Discord Bot
-This is a simple Discord bot that allows users to create and manage their own crypto portfolio.
-
-Features
-Users can create their own portfolio by adding coins and their respective amounts
-Users can view their portfolio by typing the command !portfolio
-Users can see the current value of their portfolio in USD by typing the command !networth
-Users can add/remove coins from their portfolio
-Users can get the current price of any coin by typing the command !price [coin name]
-Users can get the links to popular crypto exchange websites like Binance, Bitmart, CoinGecko, CoinMarketCap by typing the command !binance, !bitmart, !cg, !cmc respectively
-Getting started
-To use this bot, you will need to have a Discord account and create a bot on the Discord Developer Portal. Once you have your bot's token, you can invite the bot to your server and begin using it.
-
-You will also need to have Python and the discord.py library installed on your machine.
-
-Usage
-Once the bot is added to your server, users can create their own portfolio by typing the command !add [coin name] [amount]. For example, !add BTC 2.5 will add 2.5 BTC to the user's portfolio.
-
-Users can view their portfolio by typing the command !portfolio. This will display a list of all the coins in the user's portfolio and their respective amounts.
-
-Users can see the current value of their portfolio in USD by typing the command !networth. This will display the total value of the user's portfolio in USD, calculated using the current prices of the coins.
-
-Users can add/remove coins from their portfolio by using the command !add [coin name] [amount] and !remove [coin name] [amount] respectively.
-
-Users can get the current price of any coin by typing the command !price [coin name]. For example, !price BTC will display the current price of Bitcoin in USD.
-
-Users can get the links to popular crypto exchange websites like Binance, Bitmart, CoinGecko, CoinMarketCap by typing the command !binance, !bitmart, !cg, !cmc respectively.
-
-Note
-The bot uses the CoinGecko API to get the prices of the coins. The API returns prices in USD, if you wish to use other currencies, you'll have to change the code accordingly.
-
-Additional Information
-The code uses the discord.py library to interact with the Discord API
-The bot is not persistent and will not save the user's portfolio after the bot is closed.
-The bot is case-sensitive for the crypto-currency names
-The bot does not validate if the coins entered by the user are valid or not.
-Conclusion
-This bot is a simple tool that allows users to create and manage their own crypto portfolio in a Discord server. It's a great way to keep track of your crypto investments and stay updated with the latest prices.
+# The bot is operational but needs to be tested with several test cases and will be added to this repository in the next few weeks.
