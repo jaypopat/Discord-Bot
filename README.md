@@ -28,7 +28,9 @@ The bot also supports the following commands for crypto prices:
 - crypto name: Send current price of specific crypto in USD.
 - Please note that the script utilizes a dictionary, "db", to store the current prices of each cryptocurrency. The prices are only updated when the script is run.
 
-## An updated version of this is in the making which includes the features:
+---
+
+## An optimised version of this includes the features:
 # Features
 - Users can create their own portfolio by adding coins and their respective amounts
 - Users can view their portfolio by typing the command !portfolio
@@ -37,4 +39,3 @@ The bot also supports the following commands for crypto prices:
 - Users can get the current price of any coin by typing the command !price [coin name]
 - Users can get the links to popular crypto exchange websites like Binance, Bitmart, CoinGecko, CoinMarketCap by typing the command !binance, !bitmart, !cg, !cmc respectively
 
-# The bot is operational but needs to be tested with several test cases and will be added to this repository in the next few weeks.
