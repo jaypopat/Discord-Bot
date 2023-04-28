@@ -1,4 +1,5 @@
 # Discord Crypto Bot
+# This project is not regularly maintained, therefore it may not function in response to Discord's updates.
 This is a simple Discord bot that uses the Discord API and Python's "requests" library to retrieve and display cryptocurrency prices from the CoinGecko API.
 
 The bot also includes commands to display links to popular cryptocurrency exchanges such as Binance and Bitmart, as well as links to CoinGecko and CoinMarketCap.
